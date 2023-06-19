@@ -165,7 +165,7 @@ class EOCJournalXBlock(StudioEditableXBlockMixin, XBlock):
         'display_answers',
         'custom_font',
     )
-
+    has_author_view = True
     @property
     def i18n_service(self):
         """ Obtains translation service """
@@ -245,6 +245,10 @@ class EOCJournalXBlock(StudioEditableXBlockMixin, XBlock):
         )
         fragment.initialize_js("EOCJournalXBlock")
         return fragment
+
+    def author_view(self, context=None):
+        fragment = Fragment()
+        return fragment        
 
     @staticmethod
     def resource_string(path):
